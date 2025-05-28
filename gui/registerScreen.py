@@ -1,3 +1,5 @@
+from itertools import repeat
+
 import arcade
 from arcade.gui import UIManager, UIBoxLayout, UIFlatButton, UIAnchorLayout, UILabel
 from utils.displayScreen import displayScreen
@@ -28,17 +30,30 @@ class RegisterScreen(arcade.View):
         self.repeat_password_input = arcade.gui.UIInputText(width=300, height=30)
         self.vbox.add(self.repeat_password_input)
 
+        self.error_label= UILabel(text="", font_size=14, text_color=arcade.color.RED)
+        self.vbox.add(self.error_label)
 
         submit_button = UIFlatButton(text="Submit", width=200)
         self.vbox.add(submit_button)
         #SUBMIT
         @submit_button.event("on_click")
         def on_submit(event):
-            #print(f"Username: {self.username_input.text}")
-            #print(f"Password: {self.password_input.text}")
-            #print(f"Repeated password: {self.repeat_password_input.text}")
-            #print(f"Email: {self.email_input.text}")
-            from mainMenu import MainMenu
+            username = self.username_input.text.strip()
+            password = self.password_input.text.strip()
+            repeat_password = self.repeat_password_input.text.strip()
+            email = self.email_input.text.strip()
+            if not username or not password or not repeat_password or not email:
+                self.error_label.text = "Wszystkie pola muszą być wypełnione."
+                return
+
+            if password != repeat_password:
+                self.error_label.text = "Hasła się nie zgadzają."
+                return
+
+            self.error_label.text = ""
+            from services.register_logic import register
+            from gui.mainMenu import MainMenu
+            register(username, password, email)
             displayScreen(self.window, self.manager, MainMenu())
 
         back_button = UIFlatButton(text="Back to Menu", width=200)
@@ -46,8 +61,8 @@ class RegisterScreen(arcade.View):
         #BACK
         @back_button.event("on_click")
         def on_back(event):
-            from startingScreen import StaringScreen
-            displayScreen(self.window, self.manager, StaringScreen())
+            from gui.startingScreen import StartingScreen
+            displayScreen(self.window, self.manager, StartingScreen())
 
         anchor.add(child=self.vbox, anchor_x="center", anchor_y="center")
 

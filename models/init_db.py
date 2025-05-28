@@ -1,10 +1,10 @@
 import os
 from sqlalchemy import create_engine
 from models.base import Base
-from models.user import User
-from models.game_data import Game_Data
+from models.session import DATABASE_URL
 
-if __name__ == "__main__":
+
+def init_db():
     os.makedirs("database", exist_ok=True)
-    engine = create_engine("sqlite:///database/userDatabase.db", echo=True)
+    engine = create_engine(DATABASE_URL, echo=True)
     Base.metadata.create_all(engine)

@@ -2,7 +2,7 @@ import arcade
 from arcade.gui import UIManager, UIBoxLayout, UIFlatButton, UIAnchorLayout
 from utils.displayScreen import displayScreen
 
-class StaringScreen(arcade.View):
+class StartingScreen(arcade.View):
     def __init__(self):
         super().__init__()
         arcade.set_background_color(arcade.color.BLACK)
@@ -22,7 +22,7 @@ class StaringScreen(arcade.View):
         @login_button.event("on_click")
         def on_click_login(event):
             print("Logged in")
-            from loginScreen import LoginScreen
+            from gui.loginScreen import LoginScreen
             displayScreen(self.window, self.manager, LoginScreen())
 
 
@@ -31,7 +31,7 @@ class StaringScreen(arcade.View):
         @register_button.event("on_click")
         def on_click_register(event):
             print("Registered")
-            from registerScreen import RegisterScreen
+            from gui.registerScreen import RegisterScreen
             displayScreen(self.window, self.manager, RegisterScreen())
 
         self.vbox.add(register_button)

@@ -3,6 +3,7 @@ from arcade.gui import UIManager, UIBoxLayout, UIFlatButton, UIAnchorLayout, UIL
 from utils.displayScreen import displayScreen
 
 
+
 class LoginScreen(arcade.View):
     def __init__(self):
         super().__init__()
@@ -20,15 +21,25 @@ class LoginScreen(arcade.View):
         self.password_input = arcade.gui.UIInputText(width=300, height=30)
         self.vbox.add(self.password_input)
 
+        self.error_label = UILabel(text="", font_size=14, text_color=arcade.color.RED)
+        self.vbox.add(self.error_label)
+
         # SUBMIT
         submit_button = UIFlatButton(text="Submit", width=200)
         self.vbox.add(submit_button)
 
         @submit_button.event("on_click")
         def on_submit(event):
-            #print(f"Username: {self.username_input.text}")
-            #print(f"Password: {self.password_input.text}")
-            from mainMenu import MainMenu
+            username = self.username_input.text.strip()
+            password = self.password_input.text.strip()
+            from services.login_logic import login
+            if username == "" or password == "":
+                self.error_label.text = "Wszystkie pola muszą być wypełnione."
+                return
+            elif login(username, password) == False:
+                self.error_label.text="Użytkownik o podanej nazwie nie istnieje"
+                return
+            from gui.mainMenu import MainMenu
             displayScreen(self.window, self.manager, MainMenu())
 
 
@@ -37,8 +48,8 @@ class LoginScreen(arcade.View):
         #BACK
         @back_button.event("on_click")
         def on_back(event):
-            from startingScreen import StaringScreen
-            displayScreen(self.window, self.manager, StaringScreen())
+            from gui.startingScreen import StartingScreen
+            displayScreen(self.window, self.manager, StartingScreen())
 
         anchor.add(child=self.vbox, anchor_x="center", anchor_y="center")
 

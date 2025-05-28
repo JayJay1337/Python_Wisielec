@@ -1,9 +1,12 @@
 import arcade
-from startingScreen import StaringScreen
+from gui.startingScreen import StartingScreen
+from models.init_db import init_db
+
 
 def main():
+    init_db()
     window = arcade.Window(800, 600, "Gra")
-    menu_view = StaringScreen()
+    menu_view = StartingScreen()
     window.show_view(menu_view)
     arcade.run()
 
