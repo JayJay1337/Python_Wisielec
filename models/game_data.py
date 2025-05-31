@@ -1,11 +1,10 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from models.base import Base
-
-class Game_Data(Base):
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
+class GameData(Base):
     __tablename__ = 'game_data'
     id = Column(Integer, primary_key=True)
-    user_Id = Column(String, ForeignKey("user.id"))
+    user_id = Column(Integer, ForeignKey("user.id"))
     score = Column(Integer)
     game_date = Column(DateTime)
-    category = Column(String(100))
     game_type = Column(String(100))
+    category_id = Column(Integer, ForeignKey("category.id"))

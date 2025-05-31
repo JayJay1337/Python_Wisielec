@@ -3,7 +3,7 @@ from itertools import repeat
 import arcade
 from arcade.gui import UIManager, UIBoxLayout, UIFlatButton, UIAnchorLayout, UILabel
 from utils.displayScreen import displayScreen
-
+from utils.password_cover import Password_Text
 
 class RegisterScreen(arcade.View):
     def __init__(self):
@@ -23,11 +23,11 @@ class RegisterScreen(arcade.View):
         self.vbox.add(self.email_input)
 
         self.vbox.add(UILabel(text="Password", font_size=14, text_color=arcade.color.WHITE))
-        self.password_input = arcade.gui.UIInputText(width=300, height=30)
+        self.password_input = Password_Text(width=300, height=30)
         self.vbox.add(self.password_input)
 
         self.vbox.add(UILabel(text="Repeat password", font_size=14, text_color=arcade.color.WHITE))
-        self.repeat_password_input = arcade.gui.UIInputText(width=300, height=30)
+        self.repeat_password_input = Password_Text(width=300, height=30)
         self.vbox.add(self.repeat_password_input)
 
         self.error_label= UILabel(text="", font_size=14, text_color=arcade.color.RED)
@@ -39,8 +39,8 @@ class RegisterScreen(arcade.View):
         @submit_button.event("on_click")
         def on_submit(event):
             username = self.username_input.text.strip()
-            password = self.password_input.text.strip()
-            repeat_password = self.repeat_password_input.text.strip()
+            password = self.password_input.get_password().strip()
+            repeat_password = self.repeat_password_input.get_password().strip()
             email = self.email_input.text.strip()
             if not username or not password or not repeat_password or not email:
                 self.error_label.text = "Wszystkie pola muszą być wypełnione."
@@ -48,6 +48,8 @@ class RegisterScreen(arcade.View):
 
             if password != repeat_password:
                 self.error_label.text = "Hasła się nie zgadzają."
+                print(password)
+                print(repeat_password)
                 return
 
             self.error_label.text = ""
