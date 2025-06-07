@@ -5,22 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="302042d4-13eb-40c4-ad87-e0c7d405abfa" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/models/category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/password_cover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf2eed72-2c13-462b-81f8-413705f701be.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf2eed72-2c13-462b-81f8-413705f701be/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd03523f-e91e-4a40-8edb-d496d4a59b11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd03523f-e91e-4a40-8edb-d496d4a59b11/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/scoreboard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/word.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/get_users_score.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/save_game_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/userDatabase.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gameScreen.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/loginScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/loginScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/mainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/mainMenu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/registerScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/registerScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/settingsScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/easyLevelScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/startingScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/startingScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/category.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/game_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/game_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/displayScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/displayScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/game_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/hardLevelScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/login_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/login_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/register_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/register_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/displayScreen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/password_cover.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/password_cover.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +78,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;X:/Python/Python_Wisielec_JJ/database/userDatabase.db&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/Python/Python_Wisielec_JJ&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,9 +95,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\Python\Python_Wisielec_JJ" />
       <recent name="X:\Python\Python_Wisielec_JJ\database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Python\Python_Wisielec_JJ\utils" />
       <recent name="X:\Python\Python_Wisielec_JJ\models" />
       <recent name="X:\Python\Python_Wisielec_JJ" />
       <recent name="X:\Python\Python_Wisielec_JJ\models\database" />
@@ -257,7 +266,15 @@
       <workItem from="1748646424704" duration="76000" />
       <workItem from="1748646513369" duration="237000" />
       <workItem from="1748720525798" duration="3014000" />
-      <workItem from="1748723611862" duration="1878000" />
+      <workItem from="1748723611862" duration="2123000" />
+      <workItem from="1748860819882" duration="52000" />
+      <workItem from="1748861133611" duration="1277000" />
+      <workItem from="1748873207593" duration="253000" />
+      <workItem from="1749133158097" duration="952000" />
+      <workItem from="1749224351412" duration="3967000" />
+      <workItem from="1749228640644" duration="791000" />
+      <workItem from="1749229857935" duration="20000" />
+      <workItem from="1749327543108" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -283,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748474499657</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <option name="closed" value="true" />
+      <created>1748726383004</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748726383004</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,11 +318,22 @@
     <MESSAGE value="commit" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$init_db.coverage" NAME="init_db Coverage Results" MODIFIED="1748453059745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$base.coverage" NAME="base Coverage Results" MODIFIED="1748276173315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$main.coverage" NAME="main Coverage Results" MODIFIED="1748454939484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1748723787242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1749329187451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$startingScreen.coverage" NAME="startingScreen Coverage Results" MODIFIED="1748455079481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$gui.coverage" NAME="gui Coverage Results" MODIFIED="1748454543228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
     <SUITE FILE_PATH="coverage/Python_Wisielec_JJ$gui__1_.coverage" NAME="gui (1) Coverage Results" MODIFIED="1748454549550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
