@@ -19,14 +19,15 @@ Klasyczna gra wisielec napisana w Pythonie z wykorzystaniem Arcade. Projekt pows
 - bcrypt
 
 ## Instalacja
-
+```bash
 git clone [url-repo]
 cd projekt_wisielec
 pip install arcade sqlalchemy bcrypt
 python main.py
-
+```
 ## Struktura projektu
 
+```
 projekt_wisielec/
 ├── globals/
 │   └── user_id.py          # globalna zmienna aktualnego użytkownika
@@ -52,36 +53,38 @@ projekt_wisielec/
 │   ├── init_db.py         # inicjalizacja bazy danych
 │   └── password_cover.py  # maskowanie hasła gwiazdkami
 └── main.py
-
+```
 ## Implementacja
 
 ### System użytkowników
 Hasła są hashowane przy pomocy bcrypt przed zapisem do bazy:
+```python
 hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
-
+```
 Przy logowaniu sprawdzane jest czy podane hasło pasuje do hasha:
+```python
 if user and bcrypt.checkpw(password.encode(), user.password.encode()):
     return user
-
+```
 ### Logika gry
-Główna pętla gry znajduje się w klasach EasyLevelScreen i HardLevelScreen. Każda litera na klawiaturze to osobny przycisk z callbackiem:
+Główna pętla gry znajduje się w klasach `EasyLevelScreen` i `HardLevelScreen`. Każda litera na klawiaturze to osobny przycisk z callbackiem:
 
-- guess_letter() - sprawdza czy litera występuje w słowie
-- check_win() - weryfikuje czy wszystkie litery zostały odgadnięte
-- draw_hangman() - rysuje kolejne części wisielca przy błędach
-- toggle_pause() - zatrzymuje/wznawia timer
+- `guess_letter()` - sprawdza czy litera występuje w słowie
+- `check_win()` - weryfikuje czy wszystkie litery zostały odgadnięte
+- `draw_hangman()` - rysuje kolejne części wisielca przy błędach
+- `toggle_pause()` - zatrzymuje/wznawia timer
 
 ### Baza danych
 SQLAlchemy z SQLite przechowuje:
-- *Users*: id, username, password (hash), email
-- *Categories*: id, name (EASY/HARD)
-- *Words*: id, polish_word, category_id
-- *GameData*: id, user_id, time, game_date, category_id
+- **Users**: id, username, password (hash), email
+- **Categories**: id, name (EASY/HARD)
+- **Words**: id, polish_word, category_id
+- **GameData**: id, user_id, time, game_date, category_id
 
 Relacje między tabelami przez foreign keys.
 
 ### Timer
-Timer działa na delta_time z Arcade i formatuje czas do MM:SS. Podczas pauzy delta_time nie jest dodawane do całkowitego czasu.
+Timer działa na `delta_time` z Arcade i formatuje czas do MM:SS. Podczas pauzy `delta_time` nie jest dodawane do całkowitego czasu.
 
 ## Jak grać
 
@@ -95,8 +98,8 @@ Gra automatycznie zapisuje wyniki po wygranej i pokazuje je w rankingu.
 
 ## Poziomy trudności
 
-*Łatwy*: 6 prób, słowa z kategorii "EASY", podstawowa grafika wisielca
-*Trudny*: 5 prób, słowa z kategorii "HARD", bardziej szczegółowa grafika wisielca
+**Łatwy**: 6 prób, słowa z kategorii "EASY", podstawowa grafika wisielca
+**Trudny**: 5 prób, słowa z kategorii "HARD", bardziej szczegółowa grafika wisielca
 
 Słowa są losowo wybierane z odpowiedniej kategorii przy starcie gry.
 
